@@ -20,20 +20,20 @@
     var CONFIG = {"hostname":"wayneliu91.github.io","root":"/","scheme":"Gemini","version":"7.8.0","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":false,"show_result":false,"style":null},"back2top":{"enable":true,"sidebar":false,"scrollpercent":false},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},"path":"search.xml"};
   </script>
 
-  <meta name="description" content="常见的容错策略失败自动切换（Failover）当出现失败，重试其它服务器。通常用于读操作，但重试会带来更长延迟。可通过 retries&#x3D;”2” 来设置重试次数(不含第一次)。 快速失败（Failfast）只发起一次调用，失败立即报错。通常用于非幂等性的写操作，比如新增记录。 失败安全（Failsafe）出现异常时忽略，但记录这一次失败，存入日志中。。通常用于写入审计日志等操作。 失败自动恢复（Fa">
+  <meta name="description" content="主要模块在工程上，为了应对越来越复杂的巨型项目，一般都使用【模块化】，比如模块化造船，模块化造汽车等等，软件工程也一样。 在 NIO 里有3个角色：channel表示一个连接，selector负责接待，Handler负责处理。 netty 是对 NIO 的包装【增强】，那么基础角色还是会有的。  为了提升接待效率，使用了 BossGroup 线程池。 为了提升处理效率，使用了 workerGrou">
 <meta property="og:type" content="article">
-<meta property="og:title" content="分布式-容错策略">
-<meta property="og:url" content="https://wayneliu91.github.io/2020/06/03/%E5%88%86%E5%B8%83%E5%BC%8F-%E5%AE%B9%E9%94%99%E7%AD%96%E7%95%A5/index.html">
+<meta property="og:title" content="netty-原理">
+<meta property="og:url" content="https://wayneliu91.github.io/2020/06/04/netty-%E5%8E%9F%E7%90%86/index.html">
 <meta property="og:site_name" content="常清">
-<meta property="og:description" content="常见的容错策略失败自动切换（Failover）当出现失败，重试其它服务器。通常用于读操作，但重试会带来更长延迟。可通过 retries&#x3D;”2” 来设置重试次数(不含第一次)。 快速失败（Failfast）只发起一次调用，失败立即报错。通常用于非幂等性的写操作，比如新增记录。 失败安全（Failsafe）出现异常时忽略，但记录这一次失败，存入日志中。。通常用于写入审计日志等操作。 失败自动恢复（Fa">
+<meta property="og:description" content="主要模块在工程上，为了应对越来越复杂的巨型项目，一般都使用【模块化】，比如模块化造船，模块化造汽车等等，软件工程也一样。 在 NIO 里有3个角色：channel表示一个连接，selector负责接待，Handler负责处理。 netty 是对 NIO 的包装【增强】，那么基础角色还是会有的。  为了提升接待效率，使用了 BossGroup 线程池。 为了提升处理效率，使用了 workerGrou">
 <meta property="og:locale" content="zh_CN">
-<meta property="article:published_time" content="2020-06-03T13:18:26.000Z">
-<meta property="article:modified_time" content="2020-06-03T15:21:47.698Z">
+<meta property="article:published_time" content="2020-06-04T06:57:32.000Z">
+<meta property="article:modified_time" content="2020-06-04T07:56:40.746Z">
 <meta property="article:author" content="liushh">
-<meta property="article:tag" content="分布式">
+<meta property="article:tag" content="netty">
 <meta name="twitter:card" content="summary">
 
-<link rel="canonical" href="https://wayneliu91.github.io/2020/06/03/%E5%88%86%E5%B8%83%E5%BC%8F-%E5%AE%B9%E9%94%99%E7%AD%96%E7%95%A5/">
+<link rel="canonical" href="https://wayneliu91.github.io/2020/06/04/netty-%E5%8E%9F%E7%90%86/">
 
 
 <script id="page-configurations">
@@ -46,7 +46,7 @@
   };
 </script>
 
-  <title>分布式-容错策略 | 常清</title>
+  <title>netty-原理 | 常清</title>
   
 
 
@@ -190,7 +190,7 @@
   
   
   <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="https://wayneliu91.github.io/2020/06/03/%E5%88%86%E5%B8%83%E5%BC%8F-%E5%AE%B9%E9%94%99%E7%AD%96%E7%95%A5/">
+    <link itemprop="mainEntityOfPage" href="https://wayneliu91.github.io/2020/06/04/netty-%E5%8E%9F%E7%90%86/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="image" content="/images/avatar.gif">
@@ -203,7 +203,7 @@
     </span>
       <header class="post-header">
         <h1 class="post-title" itemprop="name headline">
-          分布式-容错策略
+          netty-原理
         </h1>
 
         <div class="post-meta">
@@ -214,7 +214,7 @@
               <span class="post-meta-item-text">发表于</span>
               
 
-              <time title="创建时间：2020-06-03 21:18:26 / 修改时间：23:21:47" itemprop="dateCreated datePublished" datetime="2020-06-03T21:18:26+08:00">2020-06-03</time>
+              <time title="创建时间：2020-06-04 14:57:32 / 修改时间：15:56:40" itemprop="dateCreated datePublished" datetime="2020-06-04T14:57:32+08:00">2020-06-04</time>
             </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
@@ -222,7 +222,7 @@
               </span>
               <span class="post-meta-item-text">分类于</span>
                 <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/%E5%88%86%E5%B8%83%E5%BC%8F/" itemprop="url" rel="index"><span itemprop="name">分布式</span></a>
+                  <a href="/categories/netty/" itemprop="url" rel="index"><span itemprop="name">netty</span></a>
                 </span>
             </span>
 
@@ -244,12 +244,31 @@
     <div class="post-body" itemprop="articleBody">
 
       
-        <h1 id="常见的容错策略"><a href="#常见的容错策略" class="headerlink" title="常见的容错策略"></a>常见的容错策略</h1><h4 id="失败自动切换（Failover）"><a href="#失败自动切换（Failover）" class="headerlink" title="失败自动切换（Failover）"></a>失败自动切换（Failover）</h4><p>当出现失败，重试其它服务器。通常用于<code>读操作</code>，但重试会带来更长延迟。可通过 retries=”2” 来设置重试次数(不含第一次)。</p>
-<h4 id="快速失败（Failfast）"><a href="#快速失败（Failfast）" class="headerlink" title="快速失败（Failfast）"></a>快速失败（Failfast）</h4><p>只发起一次调用，失败立即报错。通常用于<code>非幂等性</code>的<code>写操作</code>，比如新增记录。</p>
-<h4 id="失败安全（Failsafe）"><a href="#失败安全（Failsafe）" class="headerlink" title="失败安全（Failsafe）"></a>失败安全（Failsafe）</h4><p>出现异常时忽略，但记录这一次失败，存入日志中。。通常用于<code>写入审计日志</code>等操作。</p>
-<h4 id="失败自动恢复（Failback）"><a href="#失败自动恢复（Failback）" class="headerlink" title="失败自动恢复（Failback）"></a>失败自动恢复（Failback）</h4><p>后台记录失败请求，定时重发。通常用于<code>消息通知操作</code>。</p>
-<h4 id="并行调用（forking）"><a href="#并行调用（forking）" class="headerlink" title="并行调用（forking）"></a>并行调用（forking）</h4><p>只要一个成功即返回，通常用于<code>实时性要求较高</code>的<code>读操作</code>。需要浪费更多服务资源。可通过 forks=”2” 来设置最大并行数。</p>
-<h4 id="广播（broadcast）"><a href="#广播（broadcast）" class="headerlink" title="广播（broadcast）"></a>广播（broadcast）</h4><p>广播调用所有提供者，逐个调用，任意一台报错则报错。通常用于<code>通知所有提供者更新缓存或日志</code>等本地资源信息。</p>
+        <h4 id="主要模块"><a href="#主要模块" class="headerlink" title="主要模块"></a>主要模块</h4><p>在工程上，为了应对越来越复杂的巨型项目，一般都使用【模块化】，比如模块化造船，模块化造汽车等等，软件工程也一样。</p>
+<p>在 NIO 里有3个角色：channel表示一个连接，selector负责接待，Handler负责处理。</p>
+<p>netty 是对 NIO 的包装【增强】，那么基础角色还是会有的。</p>
+<ul>
+<li>为了提升接待效率，使用了 BossGroup 线程池。</li>
+<li>为了提升处理效率，使用了 workerGroup 线程池。</li>
+<li>反正都是线程池，逻辑都一样，那么就共用同样的类：NioEventLoopGroup。</li>
+<li>线程池里的【任务】，抽象成【事件】，即 NioEventLoop。</li>
+<li>worker 处理的业务相对于boss而言，更复杂，参照工业上的实践，设计一个流水线(pipeline)，上面有很多处理器(handler)。</li>
+</ul>
+<h4 id="各个模块的功能和模块之间的配合"><a href="#各个模块的功能和模块之间的配合" class="headerlink" title="各个模块的功能和模块之间的配合"></a>各个模块的功能和模块之间的配合</h4><ol start="6">
+<li>每个【Boss循环】执行的步骤有3步：<ul>
+<li>轮询 accept 事件；</li>
+<li>处理 accept 事件，与client建立连接, 生成 Channel, 并将其注册到某个 worker 上的 selector；</li>
+<li>处理任务队列的任务， 即 runAllTasks；</li>
+</ul>
+</li>
+<li>每个 Worker NIOEventLoop 循环执行的步骤：<ul>
+<li>轮询 read，write 事件；</li>
+<li>处理 I/O 事件，即read，write 事件，在对应 Channel 处理；</li>
+<li>处理任务队列的任务，即 runAllTasks；</li>
+</ul>
+</li>
+<li>每个Worker NIOEventLoop 处理业务时，会使用 pipeline(流水线), 流水线的一头连接 channel , 即通过 pipeline 可以获取到对应的 channel, 流水线上有很多的【处理器】。</li>
+</ol>
 
     </div>
 
@@ -259,7 +278,7 @@
 
       <footer class="post-footer">
           <div class="post-tags">
-              <a href="/tags/%E5%88%86%E5%B8%83%E5%BC%8F/" rel="tag"># 分布式</a>
+              <a href="/tags/netty/" rel="tag"># netty</a>
           </div>
 
         
@@ -267,11 +286,11 @@
 
         
     <div class="post-nav">
-      <div class="post-nav-item"></div>
       <div class="post-nav-item">
-    <a href="/2020/06/03/%E5%88%86%E5%B8%83%E5%BC%8F-%E8%B4%9F%E8%BD%BD%E5%9D%87%E8%A1%A1/" rel="next" title="分布式-负载均衡">
-      分布式-负载均衡 <i class="fa fa-chevron-right"></i>
+    <a href="/2020/06/04/netty-%E9%9B%B6%E6%8B%B7%E8%B4%9D/" rel="prev" title="netty-零拷贝">
+      <i class="fa fa-chevron-left"></i> netty-零拷贝
     </a></div>
+      <div class="post-nav-item"></div>
     </div>
       </footer>
     
@@ -330,7 +349,7 @@
 
       <!--noindex-->
       <div class="post-toc-wrap sidebar-panel">
-          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#常见的容错策略"><span class="nav-number">1.</span> <span class="nav-text">常见的容错策略</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#失败自动切换（Failover）"><span class="nav-number">1.0.0.1.</span> <span class="nav-text">失败自动切换（Failover）</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#快速失败（Failfast）"><span class="nav-number">1.0.0.2.</span> <span class="nav-text">快速失败（Failfast）</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#失败安全（Failsafe）"><span class="nav-number">1.0.0.3.</span> <span class="nav-text">失败安全（Failsafe）</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#失败自动恢复（Failback）"><span class="nav-number">1.0.0.4.</span> <span class="nav-text">失败自动恢复（Failback）</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#并行调用（forking）"><span class="nav-number">1.0.0.5.</span> <span class="nav-text">并行调用（forking）</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#广播（broadcast）"><span class="nav-number">1.0.0.6.</span> <span class="nav-text">广播（broadcast）</span></a></li></ol></li></ol></li></ol></li></ol></div>
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-4"><a class="nav-link" href="#主要模块"><span class="nav-number">1.</span> <span class="nav-text">主要模块</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#各个模块的功能和模块之间的配合"><span class="nav-number">2.</span> <span class="nav-text">各个模块的功能和模块之间的配合</span></a></li></ol></div>
       </div>
       <!--/noindex-->
 

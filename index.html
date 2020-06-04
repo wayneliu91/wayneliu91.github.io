@@ -189,6 +189,171 @@
   
   
   <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="https://wayneliu91.github.io/2020/06/04/netty-%E5%8E%9F%E7%90%86/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="liushh">
+      <meta itemprop="description" content="personal blog">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="常清">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/2020/06/04/netty-%E5%8E%9F%E7%90%86/" class="post-title-link" itemprop="url">netty-原理</a>
+        </h2>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+              
+
+              <time title="创建时间：2020-06-04 14:57:32 / 修改时间：15:56:40" itemprop="dateCreated datePublished" datetime="2020-06-04T14:57:32+08:00">2020-06-04</time>
+            </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/netty/" itemprop="url" rel="index"><span itemprop="name">netty</span></a>
+                </span>
+            </span>
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <h4 id="主要模块"><a href="#主要模块" class="headerlink" title="主要模块"></a>主要模块</h4><p>在工程上，为了应对越来越复杂的巨型项目，一般都使用【模块化】，比如模块化造船，模块化造汽车等等，软件工程也一样。</p>
+<p>在 NIO 里有3个角色：channel表示一个连接，selector负责接待，Handler负责处理。</p>
+<p>netty 是对 NIO 的包装【增强】，那么基础角色还是会有的。</p>
+<ul>
+<li>为了提升接待效率，使用了 BossGroup 线程池。</li>
+<li>为了提升处理效率，使用了 workerGroup 线程池。</li>
+<li>反正都是线程池，逻辑都一样，那么就共用同样的类：NioEventLoopGroup。</li>
+<li>线程池里的【任务】，抽象成【事件】，即 NioEventLoop。</li>
+<li>worker 处理的业务相对于boss而言，更复杂，参照工业上的实践，设计一个流水线(pipeline)，上面有很多处理器(handler)。</li>
+</ul>
+<h4 id="各个模块的功能和模块之间的配合"><a href="#各个模块的功能和模块之间的配合" class="headerlink" title="各个模块的功能和模块之间的配合"></a>各个模块的功能和模块之间的配合</h4><ol start="6">
+<li>每个【Boss循环】执行的步骤有3步：<ul>
+<li>轮询 accept 事件；</li>
+<li>处理 accept 事件，与client建立连接, 生成 Channel, 并将其注册到某个 worker 上的 selector；</li>
+<li>处理任务队列的任务， 即 runAllTasks；</li>
+</ul>
+</li>
+<li>每个 Worker NIOEventLoop 循环执行的步骤：<ul>
+<li>轮询 read，write 事件；</li>
+<li>处理 I/O 事件，即read，write 事件，在对应 Channel 处理；</li>
+<li>处理任务队列的任务，即 runAllTasks；</li>
+</ul>
+</li>
+<li>每个Worker NIOEventLoop 处理业务时，会使用 pipeline(流水线), 流水线的一头连接 channel , 即通过 pipeline 可以获取到对应的 channel, 流水线上有很多的【处理器】。</li>
+</ol>
+
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="https://wayneliu91.github.io/2020/06/04/netty-%E9%9B%B6%E6%8B%B7%E8%B4%9D/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="liushh">
+      <meta itemprop="description" content="personal blog">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="常清">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/2020/06/04/netty-%E9%9B%B6%E6%8B%B7%E8%B4%9D/" class="post-title-link" itemprop="url">netty-零拷贝</a>
+        </h2>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+              
+
+              <time title="创建时间：2020-06-04 14:57:18 / 修改时间：16:41:55" itemprop="dateCreated datePublished" datetime="2020-06-04T14:57:18+08:00">2020-06-04</time>
+            </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/netty/" itemprop="url" rel="index"><span itemprop="name">netty</span></a>
+                </span>
+            </span>
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <h3 id="是什么？"><a href="#是什么？" class="headerlink" title="是什么？"></a>是什么？</h3><p>目的：为了避免CPU将数据从一块存储拷贝到另外一块存储，减少不必要的拷贝，提高系统资源的利用效率，发明了一种技术方案。<br>注意：这里说的零拷贝是指CPU缓冲区之间的复制，不是真的就一点没有复制了。</p>
+<h3 id="用来干什么？"><a href="#用来干什么？" class="headerlink" title="用来干什么？"></a>用来干什么？</h3><p>减少CPU复制，提升网络编程的性能。</p>
+<h3 id="原理是什么？"><a href="#原理是什么？" class="headerlink" title="原理是什么？"></a>原理是什么？</h3><p>传统IO<br><img src="https://s1.ax1x.com/2020/06/04/t0oMCV.png" alt="t0oMCV.png"></p>
+<p>MMAP内存映射<br><img src="https://s1.ax1x.com/2020/06/04/t0oMCV.png" alt="t0oMCV.png"></p>
+<p>Linux 2.1 版本<br><img src="https://s1.ax1x.com/2020/06/04/t0oQ3T.png" alt="t0oQ3T.png"></p>
+<p>Linux 2.4 版本<br>这里其实有一次 CPU 拷贝，kernel buffer -&gt; socket buffer，但是，拷贝的信息很少，比如lenght、offset , 消耗低，可以忽略<br><img src="https://s1.ax1x.com/2020/06/04/t0olgU.png" alt="t0olgU.png"></p>
+
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
     <link itemprop="mainEntityOfPage" href="https://wayneliu91.github.io/2020/06/03/spring-%E5%AE%B9%E5%99%A8%E5%88%9D%E5%A7%8B%E5%8C%96/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -878,20 +1043,20 @@
       <div class="site-state-item site-state-posts">
           <a href="/archives/">
         
-          <span class="site-state-item-count">7</span>
+          <span class="site-state-item-count">9</span>
           <span class="site-state-item-name">日志</span>
         </a>
       </div>
       <div class="site-state-item site-state-categories">
             <a href="/categories/">
           
-        <span class="site-state-item-count">5</span>
+        <span class="site-state-item-count">6</span>
         <span class="site-state-item-name">分类</span></a>
       </div>
       <div class="site-state-item site-state-tags">
             <a href="/tags/">
           
-        <span class="site-state-item-count">5</span>
+        <span class="site-state-item-count">6</span>
         <span class="site-state-item-name">标签</span></a>
       </div>
   </nav>
