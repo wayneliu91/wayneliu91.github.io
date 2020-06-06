@@ -222,17 +222,6 @@
       </tags>
   </entry>
   <entry>
-    <title>protobuf-运行</title>
-    <url>/2020/06/05/protobuf-%E8%BF%90%E8%A1%8C/</url>
-    <content><![CDATA[]]></content>
-      <categories>
-        <category>protobuf</category>
-      </categories>
-      <tags>
-        <tag>protobuf</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>netty-零拷贝</title>
     <url>/2020/06/04/netty-%E9%9B%B6%E6%8B%B7%E8%B4%9D/</url>
     <content><![CDATA[<h3 id="是什么？"><a href="#是什么？" class="headerlink" title="是什么？"></a>是什么？</h3><p>目的：为了避免CPU将数据从一块存储拷贝到另外一块存储，减少不必要的拷贝，提高系统资源的利用效率，发明了一种技术方案。</p>
@@ -343,7 +332,15 @@
   <entry>
     <title>protobuf-概览</title>
     <url>/2020/06/05/protobuf-%E6%A6%82%E8%A7%88/</url>
-    <content><![CDATA[]]></content>
+    <content><![CDATA[<h3 id="是什么？"><a href="#是什么？" class="headerlink" title="是什么？"></a>是什么？</h3><p>2个人通信的时候，需要用相同的信息格式。比如一句话完了之后用什么符号来标识，如果收信的一方不知道这个规则，就会看不懂。所以需要约定一个格式。</p>
+<p>Protocol Buffer 就是制定了一种格式，如果通信双方都使用这种格式，那就能看懂对方发来的信息。</p>
+<h3 id="能干什么？"><a href="#能干什么？" class="headerlink" title="能干什么？"></a>能干什么？</h3><p>Protocol Buffer 不止制定了一种格式，而且提供了一套工具，各种语言的都有。</p>
+<h3 id="由哪些部分组成？"><a href="#由哪些部分组成？" class="headerlink" title="由哪些部分组成？"></a>由哪些部分组成？</h3><ul>
+<li>原始数据，</li>
+<li>原始数据的描述文件<code>.proto</code>类似于xml的xsd文件，</li>
+<li>编解码工具。</li>
+</ul>
+<h3 id="各个部分的功能是什么？"><a href="#各个部分的功能是什么？" class="headerlink" title="各个部分的功能是什么？"></a>各个部分的功能是什么？</h3>]]></content>
       <categories>
         <category>protobuf</category>
       </categories>
@@ -684,6 +681,17 @@
       </categories>
       <tags>
         <tag>消息队列</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>protobuf-使用</title>
+    <url>/2020/06/05/protobuf-%E4%BD%BF%E7%94%A8/</url>
+    <content><![CDATA[]]></content>
+      <categories>
+        <category>protobuf</category>
+      </categories>
+      <tags>
+        <tag>protobuf</tag>
       </tags>
   </entry>
 </search>
