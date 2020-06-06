@@ -1,0 +1,1288 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
+<meta name="theme-color" content="#222">
+<meta name="generator" content="Hexo 4.2.1">
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png">
+  <link rel="mask-icon" href="/images/logo.svg" color="#222">
+
+<link rel="stylesheet" href="/css/main.css">
+
+
+<link rel="stylesheet" href="/lib/font-awesome/css/font-awesome.min.css">
+
+<script id="hexo-configurations">
+    var NexT = window.NexT || {};
+    var CONFIG = {"hostname":"wayneliu91.github.io","root":"/","scheme":"Gemini","version":"7.8.0","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":false,"show_result":false,"style":null},"back2top":{"enable":true,"sidebar":false,"scrollpercent":false},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},"path":"search.xml"};
+  </script>
+
+  <meta name="description" content="个人笔记，没广告，无需审核">
+<meta property="og:type" content="website">
+<meta property="og:title" content="青禾">
+<meta property="og:url" content="https://wayneliu91.github.io/page/4/index.html">
+<meta property="og:site_name" content="青禾">
+<meta property="og:description" content="个人笔记，没广告，无需审核">
+<meta property="og:locale" content="zh_CN">
+<meta property="article:author" content="liushh">
+<meta property="article:tag" content="java">
+<meta property="article:tag" content="dubbo">
+<meta property="article:tag" content="spring">
+<meta property="article:tag" content="go">
+<meta name="twitter:card" content="summary">
+
+<link rel="canonical" href="https://wayneliu91.github.io/page/4/">
+
+
+<script id="page-configurations">
+  // https://hexo.io/docs/variables.html
+  CONFIG.page = {
+    sidebar: "",
+    isHome : true,
+    isPost : false,
+    lang   : 'zh-CN'
+  };
+</script>
+
+  <title>青禾</title>
+  
+
+
+
+
+
+
+  <noscript>
+  <style>
+  .use-motion .brand,
+  .use-motion .menu-item,
+  .sidebar-inner,
+  .use-motion .post-block,
+  .use-motion .pagination,
+  .use-motion .comments,
+  .use-motion .post-header,
+  .use-motion .post-body,
+  .use-motion .collection-header { opacity: initial; }
+
+  .use-motion .site-title,
+  .use-motion .site-subtitle {
+    opacity: initial;
+    top: initial;
+  }
+
+  .use-motion .logo-line-before i { left: initial; }
+  .use-motion .logo-line-after i { right: initial; }
+  </style>
+</noscript>
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage">
+  <div class="container use-motion">
+    <div class="headband"></div>
+
+    <header class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-container">
+  <div class="site-nav-toggle">
+    <div class="toggle" aria-label="切换导航栏">
+      <span class="toggle-line toggle-line-first"></span>
+      <span class="toggle-line toggle-line-middle"></span>
+      <span class="toggle-line toggle-line-last"></span>
+    </div>
+  </div>
+
+  <div class="site-meta">
+
+    <a href="/" class="brand" rel="start">
+      <span class="logo-line-before"><i></i></span>
+      <h1 class="site-title">青禾</h1>
+      <span class="logo-line-after"><i></i></span>
+    </a>
+      <p class="site-subtitle" itemprop="description">忠于事,诚于人,克于己</p>
+  </div>
+
+  <div class="site-nav-right">
+    <div class="toggle popup-trigger">
+        <i class="fa fa-search fa-fw fa-lg"></i>
+    </div>
+  </div>
+</div>
+
+
+
+
+<nav class="site-nav">
+  <ul id="menu" class="menu">
+        <li class="menu-item menu-item-home">
+
+    <a href="/" rel="section"><i class="fa fa-fw fa-home"></i>首页</a>
+
+  </li>
+        <li class="menu-item menu-item-tags">
+
+    <a href="/tags/" rel="section"><i class="fa fa-fw fa-tags"></i>标签</a>
+
+  </li>
+        <li class="menu-item menu-item-categories">
+
+    <a href="/categories/" rel="section"><i class="fa fa-fw fa-th"></i>分类</a>
+
+  </li>
+        <li class="menu-item menu-item-archives">
+
+    <a href="/archives/" rel="section"><i class="fa fa-fw fa-archive"></i>归档</a>
+
+  </li>
+      <li class="menu-item menu-item-search">
+        <a role="button" class="popup-trigger"><i class="fa fa-search fa-fw"></i>搜索
+        </a>
+      </li>
+  </ul>
+</nav>
+
+
+
+  <div class="search-pop-overlay">
+    <div class="popup search-popup">
+        <div class="search-header">
+  <span class="search-icon">
+    <i class="fa fa-search"></i>
+  </span>
+  <div class="search-input-container">
+    <input autocomplete="off" autocapitalize="off"
+           placeholder="搜索..." spellcheck="false"
+           type="search" class="search-input">
+  </div>
+  <span class="popup-btn-close">
+    <i class="fa fa-times-circle"></i>
+  </span>
+</div>
+<div id="search-result">
+  <div id="no-result">
+    <i class="fa fa-spinner fa-pulse fa-5x fa-fw"></i>
+  </div>
+</div>
+
+    </div>
+  </div>
+
+</div>
+    </header>
+
+    
+  <div class="back-to-top">
+    <i class="fa fa-arrow-up"></i>
+    <span>0%</span>
+  </div>
+
+
+    <main class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          
+
+          <div class="content index posts-expand">
+            
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="https://wayneliu91.github.io/2020/06/04/dubbo-%E5%90%AF%E5%8A%A8/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="liushh">
+      <meta itemprop="description" content="个人笔记，没广告，无需审核">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="青禾">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/2020/06/04/dubbo-%E5%90%AF%E5%8A%A8/" class="post-title-link" itemprop="url">dubbo-启动</a>
+        </h2>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+              
+
+              <time title="创建时间：2020-06-04 18:51:11 / 修改时间：19:52:35" itemprop="dateCreated datePublished" datetime="2020-06-04T18:51:11+08:00">2020-06-04</time>
+            </span>
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <h1 id="问题"><a href="#问题" class="headerlink" title="问题"></a>问题</h1><ul>
+<li>从哪里加载？</li>
+<li>什么时候加载？</li>
+<li>用什么加载？</li>
+<li>加载后保存在哪？</li>
+<li>初始化了哪些东西？</li>
+</ul>
+
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="https://wayneliu91.github.io/2020/06/04/dubbo-%E6%A6%82%E8%A7%88/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="liushh">
+      <meta itemprop="description" content="个人笔记，没广告，无需审核">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="青禾">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/2020/06/04/dubbo-%E6%A6%82%E8%A7%88/" class="post-title-link" itemprop="url">dubbo-概览</a>
+        </h2>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+              
+
+              <time title="创建时间：2020-06-04 18:50:46 / 修改时间：19:52:08" itemprop="dateCreated datePublished" datetime="2020-06-04T18:50:46+08:00">2020-06-04</time>
+            </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/dubbo/" itemprop="url" rel="index"><span itemprop="name">dubbo</span></a>
+                </span>
+            </span>
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <h1 id="是什么？"><a href="#是什么？" class="headerlink" title="是什么？"></a>是什么？</h1><p>RPC(Remote Procedure Call) 一个远程过程调用实现方案。</p>
+<h1 id="能干什么？"><a href="#能干什么？" class="headerlink" title="能干什么？"></a>能干什么？</h1><p>参考【分布式-RPC】和【dubbo官方文档】</p>
+<h1 id="结构"><a href="#结构" class="headerlink" title="结构"></a>结构</h1><ul>
+<li>有哪些部分组成？</li>
+<li>各个部分是做什么的？</li>
+<li>这些部分如何配合工作？</li>
+</ul>
+<p>参考【dubbo官方文档】</p>
+
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="https://wayneliu91.github.io/2020/06/04/netty-%E5%8E%9F%E7%90%86/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="liushh">
+      <meta itemprop="description" content="个人笔记，没广告，无需审核">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="青禾">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/2020/06/04/netty-%E5%8E%9F%E7%90%86/" class="post-title-link" itemprop="url">netty-原理</a>
+        </h2>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+              
+
+              <time title="创建时间：2020-06-04 14:57:32 / 修改时间：17:09:00" itemprop="dateCreated datePublished" datetime="2020-06-04T14:57:32+08:00">2020-06-04</time>
+            </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/netty/" itemprop="url" rel="index"><span itemprop="name">netty</span></a>
+                </span>
+            </span>
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <h4 id="主要模块"><a href="#主要模块" class="headerlink" title="主要模块"></a>主要模块</h4><p>在工程上，为了应对越来越复杂的巨型项目，一般都使用【模块化】，比如模块化造船，模块化造汽车等等，软件工程也一样。</p>
+<p>在 NIO 里有3个角色：channel表示一个连接，selector负责接待，Handler负责处理。</p>
+<p>netty 是对 NIO 的包装【增强】，那么基础角色还是会有的。</p>
+<ul>
+<li>为了提升接待效率，使用了 BossGroup 线程池。</li>
+<li>为了提升处理效率，使用了 workerGroup 线程池。</li>
+<li>反正都是线程池，逻辑都一样，那么就共用同样的类：NioEventLoopGroup。</li>
+<li>线程池里的【任务】，抽象成【事件】，即 NioEventLoop。</li>
+<li>worker 处理的业务相对于boss而言，更复杂，参照工业上的实践，设计一个流水线(pipeline)，上面有很多处理器(handler)。</li>
+</ul>
+<h4 id="各个模块的功能和模块之间的配合"><a href="#各个模块的功能和模块之间的配合" class="headerlink" title="各个模块的功能和模块之间的配合"></a>各个模块的功能和模块之间的配合</h4><ul>
+<li><p>每个【Boss循环】执行的步骤有3步：</p>
+<ul>
+<li>轮询 accept 事件；</li>
+<li>处理 accept 事件，与client建立连接, 生成 Channel, 并将其注册到某个 worker 上的 selector；</li>
+<li>处理任务队列的任务， 即 runAllTasks；</li>
+</ul>
+</li>
+<li><p>每个【Worker循环】执行的步骤：</p>
+<ul>
+<li>轮询 read，write 事件；</li>
+<li>处理 I/O 事件，即read，write 事件，在对应 Channel 处理；</li>
+<li>处理任务队列的任务，即 runAllTasks；</li>
+</ul>
+</li>
+<li><p>每个【Worker循环】处理业务时，会使用 pipeline(流水线), 流水线连接着 channel,【流水线】上有很多的【处理器】。</p>
+</li>
+</ul>
+
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="https://wayneliu91.github.io/2020/06/04/netty-%E9%9B%B6%E6%8B%B7%E8%B4%9D/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="liushh">
+      <meta itemprop="description" content="个人笔记，没广告，无需审核">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="青禾">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/2020/06/04/netty-%E9%9B%B6%E6%8B%B7%E8%B4%9D/" class="post-title-link" itemprop="url">netty-零拷贝</a>
+        </h2>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+              
+
+              <time title="创建时间：2020-06-04 14:57:18 / 修改时间：16:48:40" itemprop="dateCreated datePublished" datetime="2020-06-04T14:57:18+08:00">2020-06-04</time>
+            </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/netty/" itemprop="url" rel="index"><span itemprop="name">netty</span></a>
+                </span>
+            </span>
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <h3 id="是什么？"><a href="#是什么？" class="headerlink" title="是什么？"></a>是什么？</h3><p>目的：为了避免CPU将数据从一块存储拷贝到另外一块存储，减少不必要的拷贝，提高系统资源的利用效率，发明了一种技术方案。</p>
+<p>注意：这里说的零拷贝是指CPU缓冲区之间的复制，不包括硬盘到CPU之间的复制，不是真的就一点没有复制了，根本目的是减少复制。</p>
+<h3 id="用来干什么？"><a href="#用来干什么？" class="headerlink" title="用来干什么？"></a>用来干什么？</h3><p>减少CPU复制，提升网络编程的性能。</p>
+<h3 id="原理是什么？"><a href="#原理是什么？" class="headerlink" title="原理是什么？"></a>原理是什么？</h3><p>传统IO<br><img src="https://s1.ax1x.com/2020/06/04/t0o1vF.png" alt="t0o1vF.png"></p>
+<p>MMAP内存映射<br><img src="https://s1.ax1x.com/2020/06/04/t0oMCV.png" alt="t0oMCV.png"></p>
+<p>Linux 2.1 版本<br><img src="https://s1.ax1x.com/2020/06/04/t0oQ3T.png" alt="t0oQ3T.png"></p>
+<p>Linux 2.4 版本<br>这里其实有一次 CPU 拷贝，kernel buffer -&gt; socket buffer，但是，拷贝的信息很少，比如lenght、offset , 消耗低，可以忽略</p>
+<p><img src="https://s1.ax1x.com/2020/06/04/t0olgU.png" alt="t0olgU.png"></p>
+
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="https://wayneliu91.github.io/2020/06/03/spring-%E5%90%AF%E5%8A%A8/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="liushh">
+      <meta itemprop="description" content="个人笔记，没广告，无需审核">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="青禾">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/2020/06/03/spring-%E5%90%AF%E5%8A%A8/" class="post-title-link" itemprop="url">spring-启动</a>
+        </h2>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+
+              <time title="创建时间：2020-06-03 23:20:07" itemprop="dateCreated datePublished" datetime="2020-06-03T23:20:07+08:00">2020-06-03</time>
+            </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-calendar-check-o"></i>
+                </span>
+                <span class="post-meta-item-text">更新于</span>
+                <time title="修改时间：2020-06-04 19:25:29" itemprop="dateModified" datetime="2020-06-04T19:25:29+08:00">2020-06-04</time>
+              </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/spring/" itemprop="url" rel="index"><span itemprop="name">spring</span></a>
+                </span>
+            </span>
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <h1 id="问题"><a href="#问题" class="headerlink" title="问题"></a>问题</h1><ul>
+<li>启动的时候做了什么？</li>
+<li>具体步骤是怎样的？</li>
+</ul>
+<h1 id="步骤"><a href="#步骤" class="headerlink" title="步骤"></a>步骤</h1><p>对于大多数软件来说，启动的时候都要加载配置，因为配置文件提供了灵活性。所以大的步骤可以分为2步：</p>
+<ul>
+<li>加载配置文件</li>
+<li>初始化</li>
+</ul>
+<h3 id="加载配置文件"><a href="#加载配置文件" class="headerlink" title="加载配置文件"></a>加载配置文件</h3><h4 id="问题-1"><a href="#问题-1" class="headerlink" title="问题"></a>问题</h4><ul>
+<li>从哪里加载？</li>
+<li>用什么加载？</li>
+<li>加载后用什么解析？</li>
+<li>加载后存在哪？</li>
+</ul>
+<h1 id="spring-容器启动的具体步骤"><a href="#spring-容器启动的具体步骤" class="headerlink" title="spring 容器启动的具体步骤"></a>spring 容器启动的具体步骤</h1><p>其实大步骤也是这几步，加载配置文件，初始化。</p>
+<p>当然，对于spring来说，为了实现<code>高内聚、低耦合、可扩展</code>，spring 使用<code>模板方法模式</code>预留了很多<code>扩展点</code>。</p>
+<ul>
+<li>准备资源、environment</li>
+<li>创建容器<ul>
+<li>加载、解析、保存【Bean定义】</li>
+</ul>
+</li>
+<li>填充容器</li>
+<li>提供子类覆盖的额外处理</li>
+<li>【Bean工厂】处理器</li>
+<li>注册【Bean处理器】，注意区分。</li>
+<li>初始化消息源 &lt;1&gt;</li>
+<li>初始化事件多播器 &lt;1&gt;</li>
+<li>初始化其他特殊Bean</li>
+<li>注册监听器 &lt;1&gt;</li>
+<li>实例化剩余单例Bean（为什么是剩余？）</li>
+<li>发布容器刷新完毕事件 &lt;1&gt;</li>
+</ul>
+
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="https://wayneliu91.github.io/2020/06/03/spring-Bean%E5%88%9D%E5%A7%8B%E5%8C%96/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="liushh">
+      <meta itemprop="description" content="个人笔记，没广告，无需审核">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="青禾">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/2020/06/03/spring-Bean%E5%88%9D%E5%A7%8B%E5%8C%96/" class="post-title-link" itemprop="url">spring-Bean初始化</a>
+        </h2>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+
+              <time title="创建时间：2020-06-03 23:07:26" itemprop="dateCreated datePublished" datetime="2020-06-03T23:07:26+08:00">2020-06-03</time>
+            </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-calendar-check-o"></i>
+                </span>
+                <span class="post-meta-item-text">更新于</span>
+                <time title="修改时间：2020-06-05 22:14:06" itemprop="dateModified" datetime="2020-06-05T22:14:06+08:00">2020-06-05</time>
+              </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/spring/" itemprop="url" rel="index"><span itemprop="name">spring</span></a>
+                </span>
+            </span>
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <h1 id="总体步骤"><a href="#总体步骤" class="headerlink" title="总体步骤"></a>总体步骤</h1><p>注意整体上这个步骤是在【Bean工厂后置处理器】之后调用的，详情可见<code>AbstractApplicationContext#refresh</code></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">实例化 createBeanInstance</span><br><span class="line">填充属性 populateBean</span><br><span class="line">初始化 initializeBean</span><br><span class="line">--invokeAwareMethods</span><br><span class="line">--applyBeanPostProcessorsBeforeInitialization</span><br><span class="line">--invokeInitMethods</span><br><span class="line">----InitializingBean.afterPropertiesSet</span><br><span class="line">----invokeCustomInitMethod</span><br><span class="line">--applyBeanPostProcessorsAfterInitialization</span><br></pre></td></tr></table></figure>
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="https://wayneliu91.github.io/2020/06/03/%E6%B6%88%E6%81%AF%E9%98%9F%E5%88%97-%E4%BB%8B%E7%BB%8D/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="liushh">
+      <meta itemprop="description" content="个人笔记，没广告，无需审核">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="青禾">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/2020/06/03/%E6%B6%88%E6%81%AF%E9%98%9F%E5%88%97-%E4%BB%8B%E7%BB%8D/" class="post-title-link" itemprop="url">消息队列-介绍</a>
+        </h2>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+              
+
+              <time title="创建时间：2020-06-03 22:40:33 / 修改时间：23:21:09" itemprop="dateCreated datePublished" datetime="2020-06-03T22:40:33+08:00">2020-06-03</time>
+            </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/%E6%B6%88%E6%81%AF%E9%98%9F%E5%88%97/" itemprop="url" rel="index"><span itemprop="name">消息队列</span></a>
+                </span>
+            </span>
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <h1 id="什么是消息队列？"><a href="#什么是消息队列？" class="headerlink" title="什么是消息队列？"></a>什么是消息队列？</h1><p>消息队列，是分布式系统中重要的组件。</p>
+<ul>
+<li>主要解决应用耦合，异步消息，流量削锋等问题。</li>
+<li>可实现高性能，高可用，可伸缩和最终一致性架构，是大型分布式系统不可缺少的中间件。</li>
+</ul>
+<p>目前主流的消息队列有Kafka</p>
+<ul>
+<li>RabbitMQ</li>
+<li>RocketMQ ，老版本是 MetaQ 。</li>
+<li>ActiveMQ ，目前用的人越来越少了。</li>
+</ul>
+<h1 id="消息队列由哪些角色组成？"><a href="#消息队列由哪些角色组成？" class="headerlink" title="消息队列由哪些角色组成？"></a>消息队列由哪些角色组成？</h1><ul>
+<li>生产者（Producer）：负责产生消息。</li>
+<li>消费者（Consumer）：负责消费消息</li>
+<li>消息代理（Message Broker）：负责存储消息和转发消息两件事情。其中，转发消息分为推送和拉取两种方式。<ul>
+<li>拉取（Pull），是指 Consumer 主动从 Message Broker 获取消息</li>
+<li>推送（Push），是指 Message Broker 主动将 Consumer 感兴趣的消息推送给 Consumer 。</li>
+</ul>
+</li>
+</ul>
+<h1 id="消息队列有哪些使用场景？"><a href="#消息队列有哪些使用场景？" class="headerlink" title="消息队列有哪些使用场景？"></a>消息队列有哪些使用场景？</h1><p>一般来说，有四大类使用场景：</p>
+<ul>
+<li>应用解耦</li>
+<li>异步处理</li>
+<li>流量削峰</li>
+<li>消息通讯</li>
+<li>日志处理</li>
+</ul>
+<p>其中，应用解耦、异步处理是比较核心的。</p>
+<h1 id="优缺点？"><a href="#优缺点？" class="headerlink" title="优缺点？"></a>优缺点？</h1><p>优点：在上述的应用场景。</p>
+<p>缺点，主要是如下三点：</p>
+<ul>
+<li><p>系统可用性降低。</p>
+<ul>
+<li>系统引入的外部依赖越多，越容易挂掉。本来你就是 A 系统调用 BCD 三个系统的接口就好了，本来 ABCD 四个系统好好的，没啥问题，你偏加个 MQ 进来，万一 MQ 挂了咋整，MQ 一挂，整套系统崩溃的，你不就完了？所以，消息队列一定要做好高可用。</li>
+</ul>
+</li>
+<li><p>系统复杂度提高。</p>
+<ul>
+<li>主要需要多考虑，1）消息怎么不重复消息。2）消息怎么保证不丢失。3）需要消息顺序的业务场景，怎么处理。</li>
+</ul>
+</li>
+<li><p>一致性问题。</p>
+<ul>
+<li>A 系统处理完了直接返回成功了，人都以为你这个请求就成功了。但是问题是，要是 B、C。D 三个系统那里，B、D 两个系统写库成功了，结果 C 系统写库失败了，咋整？你这数据就不一致了。<br>当然，这不仅仅是 MQ 的问题，引入 RPC 之后本身就存在这样的问题。如果我们在使用 MQ 时，一定要达到数据的最终一致性。即，C 系统最终执行完成。</li>
+</ul>
+</li>
+</ul>
+
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="https://wayneliu91.github.io/2020/06/03/redis-%E6%A6%82%E8%A7%88/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="liushh">
+      <meta itemprop="description" content="个人笔记，没广告，无需审核">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="青禾">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/2020/06/03/redis-%E6%A6%82%E8%A7%88/" class="post-title-link" itemprop="url">redis-概览</a>
+        </h2>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+
+              <time title="创建时间：2020-06-03 22:40:22" itemprop="dateCreated datePublished" datetime="2020-06-03T22:40:22+08:00">2020-06-03</time>
+            </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-calendar-check-o"></i>
+                </span>
+                <span class="post-meta-item-text">更新于</span>
+                <time title="修改时间：2020-06-04 19:13:07" itemprop="dateModified" datetime="2020-06-04T19:13:07+08:00">2020-06-04</time>
+              </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/redis/" itemprop="url" rel="index"><span itemprop="name">redis</span></a>
+                </span>
+            </span>
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <h1 id="是什么？"><a href="#是什么？" class="headerlink" title="是什么？"></a>是什么？</h1><p>Redis 的全称是 Remote Dictionary Server（远程字典服务），是一个基于内存的高性能 Key-Value 数据库（注意：是数据库，缓存只是一种使用方式）。</p>
+<h1 id="能干什么？"><a href="#能干什么？" class="headerlink" title="能干什么？"></a>能干什么？</h1><h1 id="结构"><a href="#结构" class="headerlink" title="结构"></a>结构</h1><ul>
+<li>有哪些部分组成？</li>
+<li>各个部分是做什么的？</li>
+<li>这些部分如何配合工作？</li>
+</ul>
+<h1 id="优点"><a href="#优点" class="headerlink" title="优点"></a>优点</h1><ol>
+<li>速度快；<ol>
+<li>数据存在内存。</li>
+<li>用C语言实现。</li>
+<li>单线程模型。</li>
+<li>代码质量高。</li>
+</ol>
+</li>
+<li>数据结构丰富；<ol>
+<li>字符串</li>
+<li>哈希</li>
+<li>列表</li>
+<li>集合</li>
+<li>有序集合</li>
+<li>基于字符串的：位图、HyperLog</li>
+<li>GEO（地理信息定位）</li>
+</ol>
+</li>
+<li>功能丰富<ol>
+<li>键过期，缓存</li>
+<li>发布订阅，消息</li>
+<li>lua脚本，创造新的Redis命令</li>
+<li>事务，事务</li>
+<li>流水线（pipeline），减少网络开销</li>
+</ol>
+</li>
+<li>简单稳定<ol>
+<li>源码少；</li>
+<li>单线程模型；</li>
+<li>不依赖操作系统库</li>
+</ol>
+</li>
+<li>持久化</li>
+<li>主从复制</li>
+<li>高可用和分布式<ol>
+<li>故障发现，故障自动转移。</li>
+<li>读写，容量扩展性。</li>
+</ol>
+</li>
+</ol>
+<h1 id="缺点"><a href="#缺点" class="headerlink" title="缺点"></a>缺点</h1><ol>
+<li>由于 Redis 是内存数据库，所以：单台机器，存储的数据量，依赖于机器本身的内存大小。虽然 Redis 本身有 Key 过期策略，但是还是需要提前预估和节约内存。如果内存增长过快，需要定期删除数据。</li>
+<li>如果进行完整重同步，由于需要生成 RDB 文件，并进行传输，会占用主机的 CPU ，并会消耗现网的带宽。不过 Redis2.8 版本，已经有部分重同步的功能，但是还是有可能有完整重同步的。比如，新上线的备机。</li>
+<li>修改配置文件，进行重启，将硬盘中的数据加载进内存，时间比较久。在这个过程中，Redis 不能提供服务。</li>
+</ol>
+
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="https://wayneliu91.github.io/2020/06/03/java-%E5%8A%A8%E6%80%81%E4%BB%A3%E7%90%86%E6%96%B9%E6%A1%88/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="liushh">
+      <meta itemprop="description" content="个人笔记，没广告，无需审核">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="青禾">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/2020/06/03/java-%E5%8A%A8%E6%80%81%E4%BB%A3%E7%90%86%E6%96%B9%E6%A1%88/" class="post-title-link" itemprop="url">java-动态代理方案</a>
+        </h2>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+              
+
+              <time title="创建时间：2020-06-03 22:39:59 / 修改时间：23:21:21" itemprop="dateCreated datePublished" datetime="2020-06-03T22:39:59+08:00">2020-06-03</time>
+            </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/java/" itemprop="url" rel="index"><span itemprop="name">java</span></a>
+                </span>
+            </span>
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <h1 id="测试结论："><a href="#测试结论：" class="headerlink" title="测试结论："></a>测试结论：</h1><ol>
+<li>ASM和JAVAASSIST字节码生成方式不相上下，都很快，是CGLIB的5倍。</li>
+<li>CGLIB次之，是JDK自带的两倍。</li>
+<li>JDK自带的再次之，因JDK1.6对动态代理做了优化，如果用低版本JDK更慢，要注意的是JDK也是通过字节码生成来实现动态代理的，而不是反射。</li>
+<li>JAVAASSIST提供者动态代理接口最慢，比JDK自带的还慢。<br>(这也是为什么网上有人说JAVAASSIST比JDK还慢的原因，用JAVAASSIST最好别用它提供的动态代理接口，而可以考虑用它的字节码生成方式)</li>
+</ol>
+<h1 id="差异原因："><a href="#差异原因：" class="headerlink" title="差异原因："></a>差异原因：</h1><p>各方案生成的字节码不一样，像JDK和CGLIB都考虑了很多因素，以及继承或包装了自己的一些类，所以生成的字节码非常大，而我们很多时候用不上这些，而手工生成的字节码非常小，所以速度快，具体的字节码对比，后面有贴出，可自行分析。</p>
+<h1 id="最终选型："><a href="#最终选型：" class="headerlink" title="最终选型："></a>最终选型：</h1><p>最终决定使用JAVAASSIST的字节码生成代理方式，虽然ASM稍快，但并没有快一个数量级，而JAVAASSIST的字节码生成方式比ASM方便，JAVAASSIST只需用字符串拼接出Java源码，便可生成相应字节码，而ASM需要手工写字节码。</p>
+<h1 id="测试代码"><a href="#测试代码" class="headerlink" title="测试代码"></a>测试代码</h1><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br><span class="line">91</span><br><span class="line">92</span><br><span class="line">93</span><br><span class="line">94</span><br><span class="line">95</span><br><span class="line">96</span><br><span class="line">97</span><br><span class="line">98</span><br><span class="line">99</span><br><span class="line">100</span><br><span class="line">101</span><br><span class="line">102</span><br><span class="line">103</span><br><span class="line">104</span><br><span class="line">105</span><br><span class="line">106</span><br><span class="line">107</span><br><span class="line">108</span><br><span class="line">109</span><br><span class="line">110</span><br><span class="line">111</span><br><span class="line">112</span><br><span class="line">113</span><br><span class="line">114</span><br><span class="line">115</span><br><span class="line">116</span><br><span class="line">117</span><br><span class="line">118</span><br><span class="line">119</span><br><span class="line">120</span><br><span class="line">121</span><br><span class="line">122</span><br><span class="line">123</span><br><span class="line">124</span><br><span class="line">125</span><br><span class="line">126</span><br><span class="line">127</span><br><span class="line">128</span><br><span class="line">129</span><br><span class="line">130</span><br><span class="line">131</span><br><span class="line">132</span><br><span class="line">133</span><br><span class="line">134</span><br><span class="line">135</span><br><span class="line">136</span><br><span class="line">137</span><br><span class="line">138</span><br><span class="line">139</span><br><span class="line">140</span><br><span class="line">141</span><br><span class="line">142</span><br><span class="line">143</span><br><span class="line">144</span><br><span class="line">145</span><br><span class="line">146</span><br><span class="line">147</span><br><span class="line">148</span><br><span class="line">149</span><br><span class="line">150</span><br><span class="line">151</span><br><span class="line">152</span><br><span class="line">153</span><br><span class="line">154</span><br><span class="line">155</span><br><span class="line">156</span><br><span class="line">157</span><br><span class="line">158</span><br><span class="line">159</span><br><span class="line">160</span><br><span class="line">161</span><br><span class="line">162</span><br><span class="line">163</span><br><span class="line">164</span><br><span class="line">165</span><br><span class="line">166</span><br><span class="line">167</span><br><span class="line">168</span><br><span class="line">169</span><br><span class="line">170</span><br><span class="line">171</span><br><span class="line">172</span><br><span class="line">173</span><br><span class="line">174</span><br><span class="line">175</span><br><span class="line">176</span><br><span class="line">177</span><br><span class="line">178</span><br><span class="line">179</span><br><span class="line">180</span><br><span class="line">181</span><br><span class="line">182</span><br><span class="line">183</span><br><span class="line">184</span><br><span class="line">185</span><br><span class="line">186</span><br><span class="line">187</span><br><span class="line">188</span><br><span class="line">189</span><br><span class="line">190</span><br><span class="line">191</span><br><span class="line">192</span><br><span class="line">193</span><br><span class="line">194</span><br><span class="line">195</span><br><span class="line">196</span><br><span class="line">197</span><br><span class="line">198</span><br><span class="line">199</span><br><span class="line">200</span><br><span class="line">201</span><br><span class="line">202</span><br><span class="line">203</span><br><span class="line">204</span><br><span class="line">205</span><br><span class="line">206</span><br><span class="line">207</span><br><span class="line">208</span><br><span class="line">209</span><br><span class="line">210</span><br><span class="line">211</span><br><span class="line">212</span><br><span class="line">213</span><br><span class="line">214</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">interface</span> <span class="title">CountService</span> </span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">int</span> <span class="title">count</span><span class="params">()</span></span>;  </span><br><span class="line">&#125;  </span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">CountServiceImpl</span> <span class="keyword">implements</span> <span class="title">CountService</span> </span>&#123; </span><br><span class="line">    <span class="keyword">private</span> <span class="keyword">int</span> count = <span class="number">0</span>;  </span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">int</span> <span class="title">count</span><span class="params">()</span> </span>&#123;  </span><br><span class="line">        <span class="keyword">return</span> count ++;  </span><br><span class="line">    &#125;  </span><br><span class="line">&#125;  </span><br><span class="line"><span class="keyword">import</span> java.lang.reflect.Field;  </span><br><span class="line"><span class="keyword">import</span> java.lang.reflect.InvocationHandler;  </span><br><span class="line"><span class="keyword">import</span> java.lang.reflect.Method;  </span><br><span class="line"><span class="keyword">import</span> java.lang.reflect.Proxy;  </span><br><span class="line"><span class="keyword">import</span> java.text.DecimalFormat;  </span><br><span class="line">  </span><br><span class="line"><span class="keyword">import</span> javassist.ClassPool;  </span><br><span class="line"><span class="keyword">import</span> javassist.CtClass;  </span><br><span class="line"><span class="keyword">import</span> javassist.CtField;  </span><br><span class="line"><span class="keyword">import</span> javassist.CtNewConstructor;  </span><br><span class="line"><span class="keyword">import</span> javassist.CtNewMethod;  </span><br><span class="line"><span class="keyword">import</span> javassist.util.proxy.MethodHandler;  </span><br><span class="line"><span class="keyword">import</span> javassist.util.proxy.ProxyFactory;  </span><br><span class="line"><span class="keyword">import</span> javassist.util.proxy.ProxyObject;  </span><br><span class="line"><span class="keyword">import</span> net.sf.cglib.proxy.Enhancer;  </span><br><span class="line"><span class="keyword">import</span> net.sf.cglib.proxy.MethodInterceptor;  </span><br><span class="line"><span class="keyword">import</span> net.sf.cglib.proxy.MethodProxy;  </span><br><span class="line">  </span><br><span class="line"><span class="keyword">import</span> org.objectweb.asm.ClassWriter;  </span><br><span class="line"><span class="keyword">import</span> org.objectweb.asm.FieldVisitor;  </span><br><span class="line"><span class="keyword">import</span> org.objectweb.asm.MethodVisitor;  </span><br><span class="line"><span class="keyword">import</span> org.objectweb.asm.Opcodes;  </span><br><span class="line">  </span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">DynamicProxyPerformanceTest</span> </span>&#123;  </span><br><span class="line">  </span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> <span class="keyword">throws</span> Exception </span>&#123;  </span><br><span class="line">        CountService delegate = <span class="keyword">new</span> CountServiceImpl();  </span><br><span class="line">          </span><br><span class="line">        <span class="keyword">long</span> time = System.currentTimeMillis();  </span><br><span class="line">        CountService jdkProxy = createJdkDynamicProxy(delegate);  </span><br><span class="line">        time = System.currentTimeMillis() - time;  </span><br><span class="line">        System.out.println(<span class="string">"Create JDK Proxy: "</span> + time + <span class="string">" ms"</span>);  </span><br><span class="line">          </span><br><span class="line">        time = System.currentTimeMillis();  </span><br><span class="line">        CountService cglibProxy = createCglibDynamicProxy(delegate);  </span><br><span class="line">        time = System.currentTimeMillis() - time;  </span><br><span class="line">        System.out.println(<span class="string">"Create CGLIB Proxy: "</span> + time + <span class="string">" ms"</span>);  </span><br><span class="line">          </span><br><span class="line">        time = System.currentTimeMillis();  </span><br><span class="line">        CountService javassistProxy = createJavassistDynamicProxy(delegate);  </span><br><span class="line">        time = System.currentTimeMillis() - time;  </span><br><span class="line">        System.out.println(<span class="string">"Create JAVAASSIST Proxy: "</span> + time + <span class="string">" ms"</span>);  </span><br><span class="line">          </span><br><span class="line">        time = System.currentTimeMillis();  </span><br><span class="line">        CountService javassistBytecodeProxy = createJavassistBytecodeDynamicProxy(delegate);  </span><br><span class="line">        time = System.currentTimeMillis() - time;  </span><br><span class="line">        System.out.println(<span class="string">"Create JAVAASSIST Bytecode Proxy: "</span> + time + <span class="string">" ms"</span>);  </span><br><span class="line">          </span><br><span class="line">        time = System.currentTimeMillis();  </span><br><span class="line">        CountService asmBytecodeProxy = createAsmBytecodeDynamicProxy(delegate);  </span><br><span class="line">        time = System.currentTimeMillis() - time;  </span><br><span class="line">        System.out.println(<span class="string">"Create ASM Proxy: "</span> + time + <span class="string">" ms"</span>);  </span><br><span class="line">        System.out.println(<span class="string">"================"</span>);  </span><br><span class="line">          </span><br><span class="line">        <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &amp;lt; <span class="number">3</span>; i++) &#123;  </span><br><span class="line">            test(jdkProxy, <span class="string">"Run JDK Proxy: "</span>);  </span><br><span class="line">            test(cglibProxy, <span class="string">"Run CGLIB Proxy: "</span>);  </span><br><span class="line">            test(javassistProxy, <span class="string">"Run JAVAASSIST Proxy: "</span>);  </span><br><span class="line">            test(javassistBytecodeProxy, <span class="string">"Run JAVAASSIST Bytecode Proxy: "</span>);  </span><br><span class="line">            test(asmBytecodeProxy, <span class="string">"Run ASM Bytecode Proxy: "</span>);  </span><br><span class="line">            System.out.println(<span class="string">"----------------"</span>);  </span><br><span class="line">        &#125;  </span><br><span class="line">    &#125;  </span><br><span class="line">  </span><br><span class="line">    <span class="function"><span class="keyword">private</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">test</span><span class="params">(CountService service, String label)</span>  </span></span><br><span class="line"><span class="function">            <span class="keyword">throws</span> Exception </span>&#123;  </span><br><span class="line">        service.count(); <span class="comment">// warm up  </span></span><br><span class="line">        <span class="keyword">int</span> count = <span class="number">10000000</span>;  </span><br><span class="line">        <span class="keyword">long</span> time = System.currentTimeMillis();  </span><br><span class="line">        <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &amp;lt; count; i++) &#123;  </span><br><span class="line">            service.count();  </span><br><span class="line">        &#125;  </span><br><span class="line">        time = System.currentTimeMillis() - time;  </span><br><span class="line">        System.out.println(label + time + <span class="string">" ms, "</span> + <span class="keyword">new</span> DecimalFormat().format(count * <span class="number">1000</span> / time) + <span class="string">" t/s"</span>);  </span><br><span class="line">    &#125;  </span><br><span class="line">  </span><br><span class="line">    <span class="function"><span class="keyword">private</span> <span class="keyword">static</span> CountService <span class="title">createJdkDynamicProxy</span><span class="params">(<span class="keyword">final</span> CountService delegate)</span> </span>&#123;  </span><br><span class="line">        CountService jdkProxy = (CountService) Proxy.newProxyInstance(ClassLoader.getSystemClassLoader(),  </span><br><span class="line">                <span class="keyword">new</span> Class[] &#123; CountService<span class="class">.<span class="keyword">class</span> &#125;, <span class="title">new</span> <span class="title">JdkHandler</span>(<span class="title">delegate</span>))</span>;  </span><br><span class="line">        <span class="keyword">return</span> jdkProxy;  </span><br><span class="line">    &#125;  </span><br><span class="line">      </span><br><span class="line">    <span class="keyword">private</span> <span class="keyword">static</span> <span class="class"><span class="keyword">class</span> <span class="title">JdkHandler</span> <span class="keyword">implements</span> <span class="title">InvocationHandler</span> </span>&#123;  </span><br><span class="line">  </span><br><span class="line">        <span class="keyword">final</span> Object delegate;  </span><br><span class="line">  </span><br><span class="line">        JdkHandler(Object delegate) &#123;  </span><br><span class="line">            <span class="keyword">this</span>.delegate = delegate;  </span><br><span class="line">        &#125;  </span><br><span class="line">  </span><br><span class="line">        <span class="function"><span class="keyword">public</span> Object <span class="title">invoke</span><span class="params">(Object object, Method method, Object[] objects)</span>  </span></span><br><span class="line"><span class="function">                <span class="keyword">throws</span> Throwable </span>&#123;  </span><br><span class="line">            <span class="keyword">return</span> method.invoke(delegate, objects);  </span><br><span class="line">        &#125;  </span><br><span class="line">    &#125;  </span><br><span class="line">  </span><br><span class="line">    <span class="function"><span class="keyword">private</span> <span class="keyword">static</span> CountService <span class="title">createCglibDynamicProxy</span><span class="params">(<span class="keyword">final</span> CountService delegate)</span> <span class="keyword">throws</span> Exception </span>&#123;  </span><br><span class="line">        Enhancer enhancer = <span class="keyword">new</span> Enhancer();  </span><br><span class="line">        enhancer.setCallback(<span class="keyword">new</span> CglibInterceptor(delegate));  </span><br><span class="line">        enhancer.setInterfaces(<span class="keyword">new</span> Class[] &#123; CountService<span class="class">.<span class="keyword">class</span> &#125;)</span>;  </span><br><span class="line">        CountService cglibProxy = (CountService) enhancer.create();  </span><br><span class="line">        <span class="keyword">return</span> cglibProxy;  </span><br><span class="line">    &#125;  </span><br><span class="line">  </span><br><span class="line">    <span class="keyword">private</span> <span class="keyword">static</span> <span class="class"><span class="keyword">class</span> <span class="title">CglibInterceptor</span> <span class="keyword">implements</span> <span class="title">MethodInterceptor</span> </span>&#123;  </span><br><span class="line">          </span><br><span class="line">        <span class="keyword">final</span> Object delegate;  </span><br><span class="line">  </span><br><span class="line">        CglibInterceptor(Object delegate) &#123;  </span><br><span class="line">            <span class="keyword">this</span>.delegate = delegate;  </span><br><span class="line">        &#125;  </span><br><span class="line">  </span><br><span class="line">        <span class="function"><span class="keyword">public</span> Object <span class="title">intercept</span><span class="params">(Object object, Method method, Object[] objects,  </span></span></span><br><span class="line"><span class="function"><span class="params">                MethodProxy methodProxy)</span> <span class="keyword">throws</span> Throwable </span>&#123;  </span><br><span class="line">            <span class="keyword">return</span> methodProxy.invoke(delegate, objects);  </span><br><span class="line">        &#125;  </span><br><span class="line">    &#125;  </span><br><span class="line">  </span><br><span class="line">    <span class="function"><span class="keyword">private</span> <span class="keyword">static</span> CountService <span class="title">createJavassistDynamicProxy</span><span class="params">(<span class="keyword">final</span> CountService delegate)</span> <span class="keyword">throws</span> Exception </span>&#123;  </span><br><span class="line">        ProxyFactory proxyFactory = <span class="keyword">new</span> ProxyFactory();  </span><br><span class="line">        proxyFactory.setInterfaces(<span class="keyword">new</span> Class[] &#123; CountService<span class="class">.<span class="keyword">class</span> &#125;)</span>;  </span><br><span class="line">        Class&amp;lt;?&amp;gt; proxyClass = proxyFactory.createClass();  </span><br><span class="line">        CountService javassistProxy = (CountService) proxyClass.newInstance();  </span><br><span class="line">        ((ProxyObject) javassistProxy).setHandler(<span class="keyword">new</span> JavaAssitInterceptor(delegate));  </span><br><span class="line">        <span class="keyword">return</span> javassistProxy;  </span><br><span class="line">    &#125;  </span><br><span class="line">  </span><br><span class="line">    <span class="keyword">private</span> <span class="keyword">static</span> <span class="class"><span class="keyword">class</span> <span class="title">JavaAssitInterceptor</span> <span class="keyword">implements</span> <span class="title">MethodHandler</span> </span>&#123;  </span><br><span class="line">  </span><br><span class="line">        <span class="keyword">final</span> Object delegate;  </span><br><span class="line">  </span><br><span class="line">        JavaAssitInterceptor(Object delegate) &#123;  </span><br><span class="line">            <span class="keyword">this</span>.delegate = delegate;  </span><br><span class="line">        &#125;  </span><br><span class="line">  </span><br><span class="line">        <span class="function"><span class="keyword">public</span> Object <span class="title">invoke</span><span class="params">(Object self, Method m, Method proceed,  </span></span></span><br><span class="line"><span class="function"><span class="params">                Object[] args)</span> <span class="keyword">throws</span> Throwable </span>&#123;  </span><br><span class="line">            <span class="keyword">return</span> m.invoke(delegate, args);  </span><br><span class="line">        &#125;  </span><br><span class="line">    &#125;  </span><br><span class="line">  </span><br><span class="line">    <span class="function"><span class="keyword">private</span> <span class="keyword">static</span> CountService <span class="title">createJavassistBytecodeDynamicProxy</span><span class="params">(CountService delegate)</span> <span class="keyword">throws</span> Exception </span>&#123;  </span><br><span class="line">        ClassPool mPool = <span class="keyword">new</span> ClassPool(<span class="keyword">true</span>);  </span><br><span class="line">        CtClass mCtc = mPool.makeClass(CountService.class.getName() + "JavaassistProxy");  </span><br><span class="line">        mCtc.addInterface(mPool.get(CountService<span class="class">.<span class="keyword">class</span>.<span class="title">getName</span>()))</span>;  </span><br><span class="line">        mCtc.addConstructor(CtNewConstructor.defaultConstructor(mCtc));  </span><br><span class="line">        mCtc.addField(CtField.make("public " + CountService.class.getName() + " delegate;", mCtc));  </span><br><span class="line">        mCtc.addMethod(CtNewMethod.make(<span class="string">"public int count() &#123; return delegate.count(); &#125;"</span>, mCtc));  </span><br><span class="line">        Class&amp;lt;?&amp;gt; pc = mCtc.toClass();  </span><br><span class="line">        CountService bytecodeProxy = (CountService) pc.newInstance();  </span><br><span class="line">        Field filed = bytecodeProxy.getClass().getField(<span class="string">"delegate"</span>);  </span><br><span class="line">        filed.set(bytecodeProxy, delegate);  </span><br><span class="line">        <span class="keyword">return</span> bytecodeProxy;  </span><br><span class="line">    &#125;  </span><br><span class="line">      </span><br><span class="line">    <span class="function"><span class="keyword">private</span> <span class="keyword">static</span> CountService <span class="title">createAsmBytecodeDynamicProxy</span><span class="params">(CountService delegate)</span> <span class="keyword">throws</span> Exception </span>&#123;  </span><br><span class="line">        ClassWriter classWriter = <span class="keyword">new</span> ClassWriter(ClassWriter.COMPUTE_FRAMES | ClassWriter.COMPUTE_MAXS);  </span><br><span class="line">        String className = CountService.class.getName() +  "AsmProxy";  </span><br><span class="line">        String classPath = className.replace(<span class="string">'.'</span>, <span class="string">'/'</span>);  </span><br><span class="line">        String interfacePath = CountService<span class="class">.<span class="keyword">class</span>.<span class="title">getName</span>().<span class="title">replace</span>('.', '/')</span>;  </span><br><span class="line">        classWriter.visit(Opcodes.V1_5, Opcodes.ACC_PUBLIC, classPath, <span class="keyword">null</span>, <span class="string">"java/lang/Object"</span>, <span class="keyword">new</span> String[] &#123;interfacePath&#125;);  </span><br><span class="line">          </span><br><span class="line">        MethodVisitor initVisitor = classWriter.visitMethod(Opcodes.ACC_PUBLIC, <span class="string">"&amp;lt;init&amp;gt;"</span>, <span class="string">"()V"</span>, <span class="keyword">null</span>, <span class="keyword">null</span>);  </span><br><span class="line">        initVisitor.visitCode();  </span><br><span class="line">        initVisitor.visitVarInsn(Opcodes.ALOAD, <span class="number">0</span>);  </span><br><span class="line">        initVisitor.visitMethodInsn(Opcodes.INVOKESPECIAL, <span class="string">"java/lang/Object"</span>, <span class="string">"&amp;lt;init&amp;gt;"</span>, <span class="string">"()V"</span>);  </span><br><span class="line">        initVisitor.visitInsn(Opcodes.RETURN);  </span><br><span class="line">        initVisitor.visitMaxs(<span class="number">0</span>, <span class="number">0</span>);  </span><br><span class="line">        initVisitor.visitEnd();  </span><br><span class="line">          </span><br><span class="line">        FieldVisitor fieldVisitor = classWriter.visitField(Opcodes.ACC_PUBLIC, <span class="string">"delegate"</span>, <span class="string">"L"</span> + interfacePath + <span class="string">";"</span>, <span class="keyword">null</span>, <span class="keyword">null</span>);  </span><br><span class="line">        fieldVisitor.visitEnd();  </span><br><span class="line">          </span><br><span class="line">        MethodVisitor methodVisitor = classWriter.visitMethod(Opcodes.ACC_PUBLIC, <span class="string">"count"</span>, <span class="string">"()I"</span>, <span class="keyword">null</span>, <span class="keyword">null</span>);  </span><br><span class="line">        methodVisitor.visitCode();  </span><br><span class="line">        methodVisitor.visitVarInsn(Opcodes.ALOAD, <span class="number">0</span>);  </span><br><span class="line">        methodVisitor.visitFieldInsn(Opcodes.GETFIELD, classPath, <span class="string">"delegate"</span>, <span class="string">"L"</span> + interfacePath + <span class="string">";"</span>);  </span><br><span class="line">        methodVisitor.visitMethodInsn(Opcodes.INVOKEINTERFACE, interfacePath, <span class="string">"count"</span>, <span class="string">"()I"</span>);  </span><br><span class="line">        methodVisitor.visitInsn(Opcodes.IRETURN);  </span><br><span class="line">        methodVisitor.visitMaxs(<span class="number">0</span>, <span class="number">0</span>);  </span><br><span class="line">        methodVisitor.visitEnd();  </span><br><span class="line">          </span><br><span class="line">        classWriter.visitEnd();  </span><br><span class="line">        <span class="keyword">byte</span>[] code = classWriter.toByteArray();  </span><br><span class="line">        CountService bytecodeProxy = (CountService) <span class="keyword">new</span> ByteArrayClassLoader().getClass(className, code).newInstance();  </span><br><span class="line">        Field filed = bytecodeProxy.getClass().getField(<span class="string">"delegate"</span>);  </span><br><span class="line">        filed.set(bytecodeProxy, delegate);  </span><br><span class="line">        <span class="keyword">return</span> bytecodeProxy;  </span><br><span class="line">    &#125;  </span><br><span class="line">      </span><br><span class="line">    <span class="keyword">private</span> <span class="keyword">static</span> <span class="class"><span class="keyword">class</span> <span class="title">ByteArrayClassLoader</span> <span class="keyword">extends</span> <span class="title">ClassLoader</span> </span>&#123;  </span><br><span class="line">  </span><br><span class="line">        <span class="function"><span class="keyword">public</span> <span class="title">ByteArrayClassLoader</span><span class="params">()</span> </span>&#123;  </span><br><span class="line">            <span class="keyword">super</span>(ByteArrayClassLoader<span class="class">.<span class="keyword">class</span>.<span class="title">getClassLoader</span>())</span>;  </span><br><span class="line">        &#125;  </span><br><span class="line">  </span><br><span class="line">        <span class="keyword">public</span> <span class="keyword">synchronized</span> Class&amp;lt;?&amp;gt; getClass(String name, <span class="keyword">byte</span>[] code) &#123;  </span><br><span class="line">            <span class="keyword">if</span> (name == <span class="keyword">null</span>) &#123;  </span><br><span class="line">                <span class="keyword">throw</span> <span class="keyword">new</span> IllegalArgumentException(<span class="string">""</span>);  </span><br><span class="line">            &#125;  </span><br><span class="line">            <span class="keyword">return</span> defineClass(name, code, <span class="number">0</span>, code.length);  </span><br><span class="line">        &#125;  </span><br><span class="line">  </span><br><span class="line">    &#125;  </span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="https://wayneliu91.github.io/2020/06/03/%E5%88%86%E5%B8%83%E5%BC%8F-%E8%B4%9F%E8%BD%BD%E5%9D%87%E8%A1%A1/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="liushh">
+      <meta itemprop="description" content="个人笔记，没广告，无需审核">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="青禾">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/2020/06/03/%E5%88%86%E5%B8%83%E5%BC%8F-%E8%B4%9F%E8%BD%BD%E5%9D%87%E8%A1%A1/" class="post-title-link" itemprop="url">分布式-负载均衡</a>
+        </h2>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+              
+
+              <time title="创建时间：2020-06-03 21:18:33 / 修改时间：23:21:32" itemprop="dateCreated datePublished" datetime="2020-06-03T21:18:33+08:00">2020-06-03</time>
+            </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/%E5%88%86%E5%B8%83%E5%BC%8F/" itemprop="url" rel="index"><span itemprop="name">分布式</span></a>
+                </span>
+            </span>
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <h1 id="使用场景"><a href="#使用场景" class="headerlink" title="使用场景"></a>使用场景</h1><p>一般而言负载均衡在客户端做。客户端获取所有的服务端，通过负载均衡算法选择其中一个服务端。</p>
+<h1 id="使用最多的"><a href="#使用最多的" class="headerlink" title="使用最多的"></a>使用最多的</h1><p>用的最多还是 RoundRobin，Random 这两种。可能和他们实现起来很简单有关，很多运用到 RPC 框架的项目也都是保持了默认配置。</p>
+<h1 id="几种负载均衡算法"><a href="#几种负载均衡算法" class="headerlink" title="几种负载均衡算法"></a>几种负载均衡算法</h1><p>负载均衡算法有几种经典实现，已经是老生常谈了，总结后主要有如下几个：</p>
+<ol>
+<li>轮询（Round Robin）</li>
+<li>加权轮询（Weight Round Robin）</li>
+<li>随机（Random）</li>
+<li>加权随机（Weight Random）</li>
+<li>源地址哈希（Hash）</li>
+<li>一致性哈希（ConsistentHash）</li>
+<li>最小连接数（Least Connections）</li>
+<li>低并发优先（Active Weight）</li>
+</ol>
+<h1 id="dubbo的负载均衡策略"><a href="#dubbo的负载均衡策略" class="headerlink" title="dubbo的负载均衡策略"></a>dubbo的负载均衡策略</h1><h1 id="随机"><a href="#随机" class="headerlink" title="随机"></a>随机</h1><p>Random LoadBalance，按权重设置随机概率。<br>在一个截面上碰撞的概率高，但调用量越大分布越均匀，而且按概率使用权重后也比较均匀，有利于动态调整提供者权重。</p>
+<h1 id="轮询"><a href="#轮询" class="headerlink" title="轮询"></a>轮询</h1><p>RoundRobin LoadBalance，按公约后的权重设置轮询比率。<br>存在慢的提供者累积请求的问题，比如：第二台机器很慢，但没挂，当请求调到第二台时就卡在那，久而久之，所有请求都卡在调到第二台上。</p>
+<h1 id="最少活跃调用数"><a href="#最少活跃调用数" class="headerlink" title="最少活跃调用数"></a>最少活跃调用数</h1><p>LeastActive LoadBalance，相同活跃数的随机，活跃数指调用前后计数差。<br>使慢的提供者收到更少请求，因为越慢的提供者的调用前后计数差会越大。</p>
+<h1 id="一致性-Hash"><a href="#一致性-Hash" class="headerlink" title="一致性 Hash"></a>一致性 Hash</h1><p>ConsistentHash LoadBalance，相同参数的请求总是发到同一提供者。<br>当某一台提供者挂时，原本发往该提供者的请求，基于虚拟节点，平摊到其它提供者，不会引起剧烈变动。</p>
+
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+
+  
+  <nav class="pagination">
+    <a class="extend prev" rel="prev" href="/page/3/"><i class="fa fa-angle-left" aria-label="上一页"></i></a><a class="page-number" href="/">1</a><span class="space">&hellip;</span><a class="page-number" href="/page/3/">3</a><span class="page-number current">4</span><a class="page-number" href="/page/5/">5</a><a class="extend next" rel="next" href="/page/5/"><i class="fa fa-angle-right" aria-label="下一页"></i></a>
+  </nav>
+
+
+
+          </div>
+          
+
+<script>
+  window.addEventListener('tabs:register', () => {
+    let { activeClass } = CONFIG.comments;
+    if (CONFIG.comments.storage) {
+      activeClass = localStorage.getItem('comments_active') || activeClass;
+    }
+    if (activeClass) {
+      let activeTab = document.querySelector(`a[href="#comment-${activeClass}"]`);
+      if (activeTab) {
+        activeTab.click();
+      }
+    }
+  });
+  if (CONFIG.comments.storage) {
+    window.addEventListener('tabs:click', event => {
+      if (!event.target.matches('.tabs-comment .tab-content .tab-pane')) return;
+      let commentClass = event.target.classList[1];
+      localStorage.setItem('comments_active', commentClass);
+    });
+  }
+</script>
+
+        </div>
+          
+  
+  <div class="toggle sidebar-toggle">
+    <span class="toggle-line toggle-line-first"></span>
+    <span class="toggle-line toggle-line-middle"></span>
+    <span class="toggle-line toggle-line-last"></span>
+  </div>
+
+  <aside class="sidebar">
+    <div class="sidebar-inner">
+
+      <ul class="sidebar-nav motion-element">
+        <li class="sidebar-nav-toc">
+          文章目录
+        </li>
+        <li class="sidebar-nav-overview">
+          站点概览
+        </li>
+      </ul>
+
+      <!--noindex-->
+      <div class="post-toc-wrap sidebar-panel">
+      </div>
+      <!--/noindex-->
+
+      <div class="site-overview-wrap sidebar-panel">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+  <p class="site-author-name" itemprop="name">liushh</p>
+  <div class="site-description" itemprop="description">个人笔记，没广告，无需审核</div>
+</div>
+<div class="site-state-wrap motion-element">
+  <nav class="site-state">
+      <div class="site-state-item site-state-posts">
+          <a href="/archives/">
+        
+          <span class="site-state-item-count">41</span>
+          <span class="site-state-item-name">日志</span>
+        </a>
+      </div>
+      <div class="site-state-item site-state-categories">
+            <a href="/categories/">
+          
+        <span class="site-state-item-count">15</span>
+        <span class="site-state-item-name">分类</span></a>
+      </div>
+      <div class="site-state-item site-state-tags">
+            <a href="/tags/">
+          
+        <span class="site-state-item-count">15</span>
+        <span class="site-state-item-name">标签</span></a>
+      </div>
+  </nav>
+</div>
+  <div class="links-of-author motion-element">
+      <span class="links-of-author-item">
+        <a href="https://github.com/wayneliu91" title="GitHub → https:&#x2F;&#x2F;github.com&#x2F;wayneliu91" rel="noopener" target="_blank"><i class="fa fa-fw fa-github"></i>GitHub</a>
+      </span>
+  </div>
+
+
+  <div class="links-of-blogroll motion-element">
+    <div class="links-of-blogroll-title">
+      <i class="fa fa-fw fa-link"></i>
+      Links
+    </div>
+    <ul class="links-of-blogroll-list">
+        <li class="links-of-blogroll-item">
+          <a href="http://www.jianshu.com/users/9dafc3d23274/latest_articles" title="http:&#x2F;&#x2F;www.jianshu.com&#x2F;users&#x2F;9dafc3d23274&#x2F;latest_articles" rel="noopener" target="_blank">简书</a>
+        </li>
+    </ul>
+  </div>
+
+      </div>
+
+    </div>
+  </aside>
+  <div id="sidebar-dimmer"></div>
+
+
+      </div>
+    </main>
+
+    <footer class="footer">
+      <div class="footer-inner">
+        
+
+        
+
+<div class="copyright">
+  
+  &copy; 
+  <span itemprop="copyrightYear">2020</span>
+  <span class="with-love">
+    <i class="fa fa-user"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">liushh</span>
+</div>
+  <div class="powered-by">由 <a href="https://hexo.io/" class="theme-link" rel="noopener" target="_blank">Hexo</a> & <a href="https://theme-next.org/" class="theme-link" rel="noopener" target="_blank">NexT.Gemini</a> 强力驱动
+  </div>
+
+        
+<div class="busuanzi-count">
+  <script async src="https://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+    <span class="post-meta-item" id="busuanzi_container_site_uv" style="display: none;">
+      <span class="post-meta-item-icon">
+        <i class="fa fa-user"></i>
+      </span>
+      <span class="site-uv" title="总访客量">
+        <span id="busuanzi_value_site_uv"></span>
+      </span>
+    </span>
+    <span class="post-meta-divider">|</span>
+    <span class="post-meta-item" id="busuanzi_container_site_pv" style="display: none;">
+      <span class="post-meta-item-icon">
+        <i class="fa fa-eye"></i>
+      </span>
+      <span class="site-pv" title="总访问量">
+        <span id="busuanzi_value_site_pv"></span>
+      </span>
+    </span>
+</div>
+
+
+
+
+
+
+
+
+      </div>
+    </footer>
+  </div>
+
+  
+  <script src="/lib/anime.min.js"></script>
+  <script src="/lib/velocity/velocity.min.js"></script>
+  <script src="/lib/velocity/velocity.ui.min.js"></script>
+
+<script src="/js/utils.js"></script>
+
+<script src="/js/motion.js"></script>
+
+
+<script src="/js/schemes/pisces.js"></script>
+
+
+<script src="/js/next-boot.js"></script>
+
+
+
+
+  
+
+
+
+
+  
+<script src="/js/local-search.js"></script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+  
+
+</body>
+</html>
