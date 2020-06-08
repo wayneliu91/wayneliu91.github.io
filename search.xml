@@ -694,4 +694,43 @@
         <tag>protobuf</tag>
       </tags>
   </entry>
+  <entry>
+    <title>java-spi</title>
+    <url>/2020/06/07/java-spi/</url>
+    <content><![CDATA[<h3 id="是什么？"><a href="#是什么？" class="headerlink" title="是什么？"></a>是什么？</h3><p>SPI，全称<code>Service Provider Interface</code>，是Java提供的一套用来被第三方实现或者扩展的API，它可以用来启用框架扩展和替换组件。</p>
+<h3 id="优点"><a href="#优点" class="headerlink" title="优点"></a>优点</h3><ol>
+<li>解耦，直接替换实现jar包即可，client端loader是接口，无需做任何更改，比如jdbc的驱动。</li>
+<li>能跨jar包加载，即实现jar在自己的<code>META-INF/services</code>目录创建即可，无需使用方创建，可以参考<code>mysql-connector-driver</code>。</li>
+</ol>
+<h3 id="缺点"><a href="#缺点" class="headerlink" title="缺点"></a>缺点</h3><ol>
+<li>只能通过遍历全部获取，即实现类全部加载并实例化。并不想用的实现类，也被加载并实例化，造成浪费。</li>
+<li>获取某个实现类的方式不够灵活，只能通过Iterator形式获取，不能根据某个参数来获取对应的实现类。</li>
+<li>多个并发多线程使用ServiceLoader类的实例是不安全的。</li>
+</ol>
+<h3 id="使用步骤"><a href="#使用步骤" class="headerlink" title="使用步骤"></a>使用步骤</h3><ol>
+<li>写一个接口；</li>
+<li>写几个实现类；</li>
+<li>创建目录和文件：<ul>
+<li>在<code>resources</code>目录下创建<code>META-INF/services</code>目录</li>
+<li>创建和<code>接口名</code>相同的文件，放到service目录下；</li>
+<li>在文件中加入<code>实现类</code>的<code>全类名</code>；</li>
+</ul>
+</li>
+<li>在代码中使用<code>ServiceLoader.loader(接口名.class)</code>加载，就会加载文件中的<code>所有</code>实现类；</li>
+</ol>
+<h3 id="使用约束"><a href="#使用约束" class="headerlink" title="使用约束"></a>使用约束</h3><p>要使用Java SPI，需要遵循如下约定：</p>
+<ul>
+<li>当服务提供者提供了接口的一种具体实现后，在jar包的META-INF/services目录下创建一个以“接口全限定名”为命名的文件，内容为实现类的全限定名；</li>
+<li>接口实现类所在的jar包放在主程序的<code>classpath</code>中；</li>
+<li>主程序通过<code>java.util.ServiceLoder</code>动态装载实现模块，它通过扫描<code>META-INF/services</code>目录下的配置文件找到实现类的全限定名，把类加载到JVM；</li>
+<li>SPI的实现类必须有<code>无参构造器</code>；</li>
+</ul>
+]]></content>
+      <categories>
+        <category>java</category>
+      </categories>
+      <tags>
+        <tag>java</tag>
+      </tags>
+  </entry>
 </search>
